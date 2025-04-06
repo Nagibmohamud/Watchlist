@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Your Watchlist</title>
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="/css/bootstrap.min.css"
+      th:href="@{/css/bootstrap.min.css}"
+      class="table table-striped"
+    />
+  </head>
+  <body>
+    <h1>Your Watchlist</h1>
+
+    <!-- Show all the shows -->
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Category</th>
+          <th>Episodes Watched</th>
+          <th>Total Episodes</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each="show : ${shows}">
+          <td th:text="${show.title}">Title</td>
+          <td th:text="${show.category}">Category</td>
+          <td th:text="${show.episodesWatched}">Episodes Watched</td>
+          <td th:text="${show.totalEpisodes}">Total Episodes</td>
+          <td th:text="${show.status}">Status</td>
+        </tr>
+      </tbody>
+    </table>
+    <a href="/addShow">Add New Show</a>
+  </body>
+</html>
