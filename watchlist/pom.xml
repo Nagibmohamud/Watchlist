@@ -31,25 +31,37 @@
     </properties>
     <dependencies>
         <dependency>
+            <groupId>jakarta.validation</groupId>
+            <artifactId>jakarta.validation-api</artifactId><!-- notempty dependency -->
+        </dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId><!-- spring security -->
+        </dependency>
+        <dependency>
+            <groupId>org.thymeleaf.extras</groupId>
+            <artifactId>thymeleaf-extras-springsecurity6</artifactId><!-- thymeleaf extras for spring security -->
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId><!-- thymeleaf -->
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId><!-- JPA-->
         </dependency>
         <dependency>
-            <groupId>com.h2database</groupId>
+            <groupId>com.h2database</groupId><!-- h2 -->
             <artifactId>h2</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <artifactId>spring-boot-starter-web</artifactId><!-- web dependency -->
         </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
+            <artifactId>spring-boot-devtools</artifactId> <!-- devtools dependency -->
             <scope>runtime</scope>
             <optional>true</optional>
         </dependency>

@@ -1,9 +1,11 @@
 package fi.haagahelia.watchlist.domain;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 
 @Entity
 public class Show {
@@ -18,9 +20,11 @@ public class Show {
     private int totalEpisodes;
     private String status; // "Watching", "Completed", etc.
 
+    @OneToOne(mappedBy = "show", cascade = CascadeType.ALL)
+    private Rating rating;
+
     public Show() {
-        this.episodesWatched = 0;
-        this.status = "Plan to Watch";
+
     }
 
     public Show(String title, String category, int totalEpisodes) {
@@ -56,6 +60,10 @@ public class Show {
         return status;
     }
 
+    public Rating getRating() {
+        return rating;
+    }
+
     // Setters
     public void setEpisodesWatched(int episodesWatched) {
         this.episodesWatched = episodesWatched;
@@ -75,5 +83,13 @@ public class Show {
 
     public void setTotalEpisodes(int totalEpisodes) {
         this.totalEpisodes = totalEpisodes;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setRating(Rating rating) {
+        this.rating = rating;
     }
 }
