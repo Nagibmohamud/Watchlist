@@ -15,14 +15,25 @@
     />
   </head>
   <body>
-    <div class="col-md-4" style="padding: 20px 0">
-      <form th:action="@{/logout}" method="post">
-        <input type="submit" value="Sign Out" class="btn btn-sm btn-danger" />
-      </form>
-    </div>
-    <h1>
-      Hello <span sec:authentication="name"></span> this is your Watchlist!
-    </h1>
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-light border-bottom shadow-sm"
+    >
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/watchlist">Watchlist</a>
+
+        <div class="d-flex ms-auto align-items-center">
+          <span
+            class="navbar-text me-3 fw-bold"
+            sec:authentication="name"
+          ></span>
+          <form th:action="@{/logout}" method="post" class="d-inline">
+            <button type="submit" class="btn btn-outline-danger btn-sm fw-bold">
+              Sign Out
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
 
     <table class="table table-striped">
       <thead>
